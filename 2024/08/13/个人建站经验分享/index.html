@@ -1,0 +1,208 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>零基础个人建站记录与经验分享 | 執筆未遂</title><meta name="author" content="Undermori"><meta name="copyright" content="Undermori"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="前言个人建站记录，主要用于后期回顾，会更新遇到的问题与解决方案，但非详细教程，仅供参考。 本人基本上算是零基础，建站初期搜罗了不少攻略和讲解，不过大多教程要求先购买域名和租借服务器，虽然在后续操作上相对省事，但对真正没有信心的零基础来说还是多了一层负担，与其面对服务器和域名的选择，不如先制作到本地确认好效果再投入使用。 所以本站使用的是Hexo框架，图床为GitHub+PicGo，通过GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="零基础个人建站记录与经验分享">
+<meta property="og:url" content="https://undermori.github.io/2024/08/13/%E4%B8%AA%E4%BA%BA%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/index.html">
+<meta property="og:site_name" content="執筆未遂">
+<meta property="og:description" content="前言个人建站记录，主要用于后期回顾，会更新遇到的问题与解决方案，但非详细教程，仅供参考。 本人基本上算是零基础，建站初期搜罗了不少攻略和讲解，不过大多教程要求先购买域名和租借服务器，虽然在后续操作上相对省事，但对真正没有信心的零基础来说还是多了一层负担，与其面对服务器和域名的选择，不如先制作到本地确认好效果再投入使用。 所以本站使用的是Hexo框架，图床为GitHub+PicGo，通过GitHub">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Undermori/test/img/niannian.png">
+<meta property="article:published_time" content="2024-08-13T09:51:15.102Z">
+<meta property="article:modified_time" content="2024-08-13T09:54:40.740Z">
+<meta property="article:author" content="Undermori">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Undermori/test/img/niannian.png"><link rel="shortcut icon" href="https://raw.githubusercontent.com/Undermori/test/img/niannian.png"><link rel="canonical" href="https://undermori.github.io/2024/08/13/%E4%B8%AA%E4%BA%BA%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '零基础个人建站记录与经验分享',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-08-13 17:54:40'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://raw.githubusercontent.com/Undermori/test/img/niannian.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/Undermori/test/img/61067775_p0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="執筆未遂"><span class="site-name">執筆未遂</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">零基础个人建站记录与经验分享</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-13T09:51:15.102Z" title="发表于 2024-08-13 17:51:15">2024-08-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-08-13T09:54:40.740Z" title="更新于 2024-08-13 17:54:40">2024-08-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">837</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="零基础个人建站记录与经验分享"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p><strong>个人建站记录，主要用于后期回顾，会更新遇到的问题与解决方案，但非详细教程，仅供参考。</strong></p>
+<p>本人基本上算是零基础，建站初期搜罗了不少攻略和讲解，不过大多教程要求先购买域名和租借服务器，虽然在后续操作上相对省事，但对真正没有信心的零基础来说还是多了一层负担，与其面对服务器和域名的选择，不如先制作到本地确认好效果再投入使用。</p>
+<p>所以本站使用的是Hexo框架，图床为GitHub+PicGo，通过GitHub Pages上线。</p>
+<p>这个流程下，已经基本可以满足个人博客所需，如果需要更加个性化或有其他更高的要求，后期可在GitHub上把<strong>username.github.io</strong>解析到自己的域名。</p>
+<p><strong>只要网络环境支持</strong>，全程不需要做额外的选择题与开销，个人认为更适合和我一样的朋友。</p>
+<h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h3><h4 id="WebStorm"><a href="#WebStorm" class="headerlink" title="WebStorm"></a>WebStorm</h4><p><strong>下载：<a target="_blank" rel="noopener" href="https://www.jetbrains.com/webstorm/">https://www.jetbrains.com/webstorm/</a></strong></p>
+<blockquote>
+<p>需要付费。 </p>
+<blockquote>
+<p>也有破解方案：<a target="_blank" rel="noopener" href="https://3.jetbra.in/">https://3.jetbra.in/</a></p>
+<ol>
+<li>打开网站选在线+星标的进入：</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/Undermori/test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-08-13%20161147.png" alt="屏幕截图 2024-08-13 161147"></p>
+<ol start="2">
+<li><p>网页上方下载文件：</p>
+<p><img src="https://raw.githubusercontent.com/Undermori/test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-08-13%20161923.png" alt="img"></p>
+<p>此页面不要关闭，后续还要用。</p>
+</li>
+<li><p>解压，微软找到<strong>scripts</strong>文件夹中的<strong>install-current-user.vbs</strong>双击，</p>
+<p>MAC为<strong>install.sh</strong>。</p>
+<p>等待出现弹窗提示DONE。</p>
+</li>
+<li><p>回到网页鼠标移动到WebStorm下方复制激活码回到软件粘贴激活即可。</p>
+</li>
+</ol>
+</blockquote>
+</blockquote>
+<h4 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h4><p><strong>下载：<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/picgo/releases">https://github.com/Molunerfinn/picgo/releases</a></strong></p>
+<h3 id="本地环境"><a href="#本地环境" class="headerlink" title="本地环境"></a>本地环境</h3><h4 id="git"><a href="#git" class="headerlink" title="git"></a>git</h4><p><strong>下载：<a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a></strong></p>
+<h4 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h4><p><strong>下载：<a target="_blank" rel="noopener" href="https://nodejs.org/en/">https://nodejs.org/en/</a></strong></p>
+<h3 id="Hexo相关配置"><a href="#Hexo相关配置" class="headerlink" title="Hexo相关配置"></a>Hexo相关配置</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>右键<strong>“Open Git Bash here”</strong>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>在本地任意位置新建文件夹作为个人网站的本地文件夹，在文件夹下右键<strong>“Open Git Bash here”</strong>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<h4 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h4><p>在<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题库</a>中选择自己喜欢的主题，使用WebStorm打开个人网站的本地文件夹，在<strong>Terminal</strong>中输入对应命令即可，以本站使用的<a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly主题</a>为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<p>到这一步，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>就可得到使用了主题的本地网站预览 ：<strong><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></strong></p>
+<p><strong>注意，在命令位置使用CTRL+C停止本地预览。</strong></p>
+<p>后续的优化、自定义、有关插件的安装与对应命令本文不再赘述，参照自己所使用主题的文档即可。</p>
+<h3 id="可能的问题与解决方案"><a href="#可能的问题与解决方案" class="headerlink" title="可能的问题与解决方案"></a>可能的问题与解决方案</h3><h4 id="git报错"><a href="#git报错" class="headerlink" title="git报错"></a>git报错</h4><h5 id="hexo-d-时“Please-tell-me-who-you-are-”"><a href="#hexo-d-时“Please-tell-me-who-you-are-”" class="headerlink" title="hexo d 时“Please tell me who you are.”"></a>hexo d 时“Please tell me who you are.”</h5><p>这个问题的解决办法它在报错的同时就告诉你了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Run</span><br><span class="line"></span><br><span class="line">git config --global user.email “you@example.com”</span><br><span class="line">git config --global user.name “Your Name”</span><br></pre></td></tr></table></figure>
+
+<p>你只需要运行下方的两行命令，将引号内的内容换成你的邮箱和名字就好。</p>
+<p>但是不得不槽，头一次看到报错然后出现这句<strong>“Please tell me who you are.”</strong>还是挺恐怖的，有种科幻电影里被程序质询的感觉。</p>
+<p><del>虽然的确是在被程序质询啦。。。</del></p>
+<h4 id="PicGo报错"><a href="#PicGo报错" class="headerlink" title="PicGo报错"></a>PicGo报错</h4><h5 id="上传图片时“You-must-be-logged-in-to-use-”"><a href="#上传图片时“You-must-be-logged-in-to-use-”" class="headerlink" title="上传图片时“You must be logged in to use.”"></a>上传图片时“You must be logged in to use.”</h5><p>如果你已经配置好了所使用图床的Token，那你就和我一样是忘记修改默认图床了。只需要在软件中找到你所使用的图床，再点击下面的<strong>“设为默认图床”</strong>就好。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://undermori.github.io">Undermori</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://undermori.github.io/2024/08/13/%E4%B8%AA%E4%BA%BA%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">https://undermori.github.io/2024/08/13/%E4%B8%AA%E4%BA%BA%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://undermori.github.io" target="_blank">執筆未遂</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://raw.githubusercontent.com/Undermori/test/img/niannian.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://raw.githubusercontent.com/Undermori/test/img/niannian.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Undermori</div><div class="author-info__description">Collector,hoarder and nihilist.<br>生命毫无意义，仅有审美予其价值。<br>“全て貴方に 捧げよう。 ”</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">I love metagame!!!</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">软件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#WebStorm"><span class="toc-number">2.1.</span> <span class="toc-text">WebStorm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PicGo"><span class="toc-number">2.2.</span> <span class="toc-text">PicGo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E7%8E%AF%E5%A2%83"><span class="toc-number">3.</span> <span class="toc-text">本地环境</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git"><span class="toc-number">3.1.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#node-js"><span class="toc-number">3.2.</span> <span class="toc-text">node.js</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">Hexo相关配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">4.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">4.2.</span> <span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98"><span class="toc-number">4.3.</span> <span class="toc-text">主题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">5.</span> <span class="toc-text">可能的问题与解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git%E6%8A%A5%E9%94%99"><span class="toc-number">5.1.</span> <span class="toc-text">git报错</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#hexo-d-%E6%97%B6%E2%80%9CPlease-tell-me-who-you-are-%E2%80%9D"><span class="toc-number">5.1.1.</span> <span class="toc-text">hexo d 时“Please tell me who you are.”</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PicGo%E6%8A%A5%E9%94%99"><span class="toc-number">5.2.</span> <span class="toc-text">PicGo报错</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E6%97%B6%E2%80%9CYou-must-be-logged-in-to-use-%E2%80%9D"><span class="toc-number">5.2.1.</span> <span class="toc-text">上传图片时“You must be logged in to use.”</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/08/13/%E4%B8%AA%E4%BA%BA%E5%BB%BA%E7%AB%99%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" title="零基础个人建站记录与经验分享">零基础个人建站记录与经验分享</a><time datetime="2024-08-13T09:51:15.102Z" title="发表于 2024-08-13 17:51:15">2024-08-13</time></div></div></div></div></div></div></main><footer id="footer" style="background: rgba(27, 31, 35, .05)"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Undermori</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
