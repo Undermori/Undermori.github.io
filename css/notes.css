@@ -38,7 +38,7 @@
 .notes-response:hover, .notes-home-response:hover { color: var(--accent-hover); }
 .notes-home-response[hidden], .notes-comment[hidden], .notes-comment.no-comment { display: none; }
 .notes-comment-count:empty { display: none; }
-#notes-feed .notes-comment { min-width: 0; }
+#notes-feed .notes-comment { grid-column: 1 / -1; width: 100%; min-width: 0; }
 #notes-feed .notes-comment .custom-hr, #notes-feed .comment-head { display: none; }
 #notes-feed .shuoshuo-navigation { display: flex; justify-content: space-between; gap: 16px; margin: 24px 0 0; padding: 0; background: transparent; }
 #notes-feed .shuoshuo-navigation button { background: transparent; color: var(--text-muted); font: 400 13px/1.85 'Blog Noto Sans SC', sans-serif; border: 0; padding: 0; }
