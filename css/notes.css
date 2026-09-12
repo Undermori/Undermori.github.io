@@ -1,0 +1,57 @@
+.notes-home { border-top: 1px solid var(--border-color-light); border-bottom: 1px solid var(--border-color-light); background: transparent; padding: 24px 40px; }
+#recent-posts > #home-notes + .recent-post-item { margin-top: 44px; }
+.notes-home-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.notes-home-header h2 { margin: 0; font: 600 1.4rem/1.5 'Blog Noto Serif SC', serif; color: var(--text-primary); }
+.notes-home-header a, .notes-time, .notes-updated { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+.notes-time { line-height: 1.85; padding-top: 3px; white-space: nowrap; }
+.notes-home-item { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; padding: 20px 0; border-top: 1px solid var(--border-color); overflow-wrap: anywhere; }
+.notes-home-body, .notes-body { min-width: 0; }
+.notes-home-content { margin: 0; font-size: 16px; line-height: 1.8; }
+.notes-home-content a { color: var(--text-secondary); }
+.notes-home-thumbnail { display: block; width: 96px; margin: 10px 0; }
+.notes-home-thumbnail img { display: block; width: 96px; height: 72px; object-fit: cover; border-radius: 4px; }
+.notes-item { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 24px; padding: 28px 0; border-top: 1px solid var(--border-color); scroll-margin-top: 80px; overflow-wrap: anywhere; }
+.notes-item:last-child { border-bottom: 1px solid var(--border-color); }
+.notes-content { color: var(--text-secondary); font-size: 17px; line-height: 1.85; }
+.notes-content p { margin: 12px 0; }
+.notes-content > :first-child { margin-top: 0; }
+.notes-content > :last-child { margin-bottom: 0; }
+.notes-content h1, .notes-content h2, .notes-content h3 { font-size: 20px; color: var(--text-primary); }
+.notes-content a { color: var(--accent-hover); text-decoration: underline; }
+.notes-content blockquote { margin: 12px 0; padding-left: 16px; border-left: 2px solid var(--accent-border); }
+.notes-content pre { overflow: auto; max-width: 100%; padding: 12px; background: var(--bg-elevated); }
+.notes-content code { font-family: 'Cascadia Code', 'Sarasa Mono SC', monospace; }
+.notes-tags { display: flex; flex-wrap: wrap; gap: 4px 12px; color: var(--accent); font-size: 13px; margin-top: 8px; }
+.notes-metadata { display: flex; flex-wrap: wrap; gap: 8px 24px; padding: 0 0 20px; font-size: 12px; color: var(--text-muted); }
+.notes-metadata strong { font-weight: 400; color: var(--text-secondary); }
+.notes-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 16px 0; }
+.notes-images a { display: block; min-width: 0; align-self: start; }
+.notes-images img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; border-radius: 4px; }
+.notes-images--1 { grid-template-columns: minmax(0, 1fr); }
+.notes-images--1 { max-width: 420px; }
+#notes-feed #article-container .notes-images img { display: block; width: 100%; height: auto; max-height: none; aspect-ratio: auto; object-fit: contain; margin: 0; }
+#notes-feed .notes-metadata { justify-content: space-between; }
+#notes-feed .notes-item { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+#notes-feed .notes-footer { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; margin-top: 12px; }
+#notes-feed .notes-footer:empty { display: none; }
+.notes-response, .notes-home-response { margin-left: auto; padding: 0; background: transparent; border: 0; color: var(--text-muted); font: 400 13px/1.85 'Blog Noto Sans SC', sans-serif; cursor: pointer; }
+.notes-response:hover, .notes-home-response:hover { color: var(--accent-hover); }
+.notes-home-response[hidden], .notes-comment[hidden], .notes-comment.no-comment { display: none; }
+.notes-comment-count:empty { display: none; }
+#notes-feed .notes-comment { min-width: 0; }
+#notes-feed .notes-comment .custom-hr, #notes-feed .comment-head { display: none; }
+#notes-feed .shuoshuo-navigation { display: flex; justify-content: space-between; gap: 16px; margin: 24px 0 0; padding: 0; background: transparent; }
+#notes-feed .shuoshuo-navigation button { background: transparent; color: var(--text-muted); font: 400 13px/1.85 'Blog Noto Sans SC', sans-serif; border: 0; padding: 0; }
+#notes-feed .shuoshuo-navigation button:hover { color: var(--accent-hover); }
+#notes-feed .shuoshuo-navigation button:disabled { opacity: .4; cursor: default; }
+.notes-empty { color: var(--text-secondary); }
+.notes-time:hover, .notes-home a:hover { color: var(--accent-hover); }
+@media screen and (max-width: 768px) {
+  .notes-home { padding: 20px; }
+  .notes-content { font-size: 16px; }
+  .notes-images { gap: 8px; }
+}
+@media screen and (max-width: 600px) {
+  .notes-home-item, .notes-item { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .notes-time { padding-top: 0; }
+}

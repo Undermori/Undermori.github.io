@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>M²Shelf——一个适合赛博仓鼠的本地媒体库</title>
+      <link href="/2026/08/26/M%C2%B2Shelf%E4%BB%8B%E7%BB%8D%E8%AF%B4%E6%98%8E/"/>
+      <url>/2026/08/26/M%C2%B2Shelf%E4%BB%8B%E7%BB%8D%E8%AF%B4%E6%98%8E/</url>
+      
+        <content type="html"><![CDATA[<h1 id="M²Shelf-（“MORI-MEDIA-SHELF”）"><a href="#M²Shelf-（“MORI-MEDIA-SHELF”）" class="headerlink" title="M²Shelf （“MORI MEDIA SHELF”）"></a>M²Shelf （“MORI MEDIA SHELF”）</h1><p>是一个完全由Codex完成，面向 Windows 本地媒体收藏的资源浏览器。</p><blockquote><p>一时兴起，方便自己看库存动画随手搓的小工具，<strong>目前只适用于整理番剧、电影本地收藏，<em>非自动化追番媒体库。</em></strong>很难想象，这么一个小东西居然花光了两个gptpro5x的额度。</p></blockquote><p>M²Shelf 把本地硬盘、移动硬盘或 NAS 映射目录中的动画、电影及相关资源建立为独立索引，提供海报墙浏览、Bangumi 元数据、标签、收藏夹、观看记录和外部播放器入口。</p><span id="more"></span><hr><p>举例来说，就是让你的动画收藏从这样：</p><p><img src="https://raw.githubusercontent.com/Undermori/test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-08-26%20122937.png" alt="img" loading='lazy'></p><p>“一键”变成这样：</p><p><img src="https://raw.githubusercontent.com/Undermori/test/img/8788574c822879f1f40636a1a319f6ac.png" alt="8788574c822879f1f40636a1a319f6ac" loading='lazy'></p><blockquote><p><strong>且软件不会移动、删除、重命名或修改源媒体文件，也不要求整理现有目录。</strong></p></blockquote><h2 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h2><ul><li><strong>本地媒体索引工具</strong>，不是播放器，也不是媒体服务器</li><li><strong>读取本地硬盘、移动硬盘或 NAS 映射目录</strong></li><li>用<strong>海报墙、列表、目录层级</strong>重新组织资源</li><li>索引信息保存在应用自己的 <strong>SQLite</strong> 数据库里</li></ul><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul><li>支持<strong>多个资源库</strong>，递归扫描任意深度目录</li><li>资源库可选择按<strong>文件夹识别</strong>或按<strong>视频文件识别</strong></li><li>支持<strong>海报墙、紧凑列表</strong>并提供真实目录层级浏览</li><li>支持<strong>本地显示名、真实文件名、Bangumi 多语言标题和用户标签搜索</strong></li><li>支持 <strong>Bangumi</strong> 自动匹配、手动搜索、重新绑定和清除绑定</li><li>支持<strong>视频、字幕、图片、音频、文档、压缩包、字体、播放列表等附属资源索引</strong></li><li>支持<strong>用户标签、一层命名收藏夹、批量编辑和最近观看</strong></li><li>支持<strong>外部播放器启动和 Windows 资源管理器定位</strong></li><li>支持<strong>简体中文、English、日本語、한국어</strong></li><li>支持<strong>跟随系统、亮色和暗色主题</strong></li></ul><h2 id="设计边界"><a href="#设计边界" class="headerlink" title="设计边界"></a>设计边界</h2><ul><li><strong>媒体源始终只读</strong></li><li><strong>不移动、不删除、不重命名真实文件</strong></li><li><strong>不向媒体目录写入 NFO、海报、数据库或临时文件</strong></li><li>扫描、标签、收藏夹、绑定和观看记录只保存在<strong>应用数据库或缓存</strong>中</li><li><strong>删除资源库只删除索引，不删除磁盘内容</strong></li></ul><h2 id="Bangumi"><a href="#Bangumi" class="headerlink" title="Bangumi"></a>Bangumi</h2><ul><li><strong>主要元数据来源</strong></li><li>自动匹配会提取<strong>目录名、文件名和父目录信息</strong></li><li>会过滤<strong>字幕组、编码、分辨率、校验码和集数等噪声</strong></li><li>只接受<strong>动画 type 2 和真人影视 type 6</strong></li><li>封面可<strong>自动下载</strong>，也可手动选择</li><li>Bangumi 可以在设置中关闭</li></ul><h2 id="播放与定位"><a href="#播放与定位" class="headerlink" title="播放与定位"></a>播放与定位</h2><ul><li><strong>不内置播放器</strong></li><li>通过用户配置的<strong>外部播放器</strong>打开视频</li><li>播放器路径作为独立参数传递</li><li>成功启动播放器后记录<strong>最近观看</strong></li><li>支持在资源管理器中<strong>精确定位文件</strong></li><li>非视频附件按<strong>系统默认程序</strong>打开</li></ul><h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><ul><li>使用固定的 <strong>GitHub Release</strong> <code>latest.json</code></li><li>只接受规范的 <code>major.minor.patch</code> 版本</li><li><strong>检查、下载、安装互相独立</strong></li><li>下载后会校验<strong>文件大小、SHA-256 和 Ed25519 签名</strong></li><li><strong>Portable 和 NSIS</strong> 都是稳定通道</li></ul><h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><ol><li>完整解压 Portable ZIP</li><li>双击 <code>M2Shelf.exe</code></li><li>添加媒体目录</li><li>选择识别方式</li><li>扫描资源库</li><li>配置播放器和 Bangumi</li></ol><p>Portable 只是指应用本体无需安装，但数据库、设置和缓存仍会写入 Windows 应用数据目录。</p><p>当前构建未做 Authenticode 签名，Windows SmartScreen 可能提示“未知发布者”；界面依赖 Microsoft Edge WebView2 Runtime。</p><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><ul><li><a href="https://github.com/Undermori/M2Shelf/releases/latest">最新 Release</a></li><li><a href="https://github.com/Undermori/M2Shelf/releases">全部版本</a></li></ul><h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul><li>Tauri 2</li><li>Rust</li><li>React 19</li><li>TypeScript</li><li>Vite</li><li>SQLite</li></ul><h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm run tauri dev</span><br></pre></td></tr></table></figure><p>仓库地址：</p><ul><li><a href="https://github.com/Undermori/M2Shelf">M²Shelf</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 资源分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> M²Shelf </tag>
+            
+            <tag> 软件 </tag>
+            
+            <tag> 媒体管理 </tag>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>“坏结局”有时才圆满？【视频文稿】</title>
+      <link href="/2026/05/20/%E5%9D%8F%E7%BB%93%E5%B1%80/"/>
+      <url>/2026/05/20/%E5%9D%8F%E7%BB%93%E5%B1%80/</url>
+      
+        <content type="html"><![CDATA[<p>你觉得一个故事的结局怎样才算圆满？</p><p>川端康成的《反桥》里引用过一句藤原基俊的和歌：“妄把誓言当命护，可怜今秋又虚度。”古往今来，这种痛苦从未离开人的身边，更生出了数不清的名篇绝句，这肯定算一种圆满。但那些艺术之森里的擎天巨树们从某个节点开始不单单满足于痛苦，而开始在痛苦中寻求快感，再借由这份快感，抵达更深的痛苦，以获得艺术上的满足和升华。于是，西方悲剧里有了普罗米修斯在悬崖上的受难，和李尔王在雨夜的哭嚎；等到了近现代，日本则有了《金阁寺》和《地狱变》的两把火，还有《春琴抄》里的一汪沸水。它们强硬地掰开我们的眼睛，让我们注视着面前的毁灭和终结，又从作品一开始，就用那些若有若无的细节在我们的耳边低声呢喃：这才是好的，这才是对的。</p><span id="more"></span><hr><p>记得小时候第一次出去旅游，出发那天司机碰巧都不在，我着急就一个人直接跑去公司等他们回来。我妈知道以后，让一个当时大学毕业不久的秘书姐姐照顾我，她怕我无聊就打开笔记本问我想玩什么。我说我随便找点网页游戏玩吧，结果她听成了我想玩《游戏王》，就行云流水去一个论坛找了个资源包下上，然后去隔壁房间了。当时还是3G网，她用的也还是那种“随身WIFI”。那资源包根本就下不动，想玩个4399加载得也慢。我又不好意思把下载暂停，辜负人家的好意，就干脆选择盯着电脑发呆，直到司机来接我。这种“每个人都没有恶意，但还是走向‘坏结局’的情节”，是文学上的常用套路，比起川端康成喜欢的那种“遗憾型”，这种更强调“命运”的成分。古希腊的悲剧大多都是这个框架，像《俄狄浦斯王》就讲了底比斯遭遇瘟疫，神谕说只有找出杀死前任国王的凶手，城邦才能得救。俄狄浦斯作为国王开始追查真相，结果却发现一切线索都指向自己的故事。这也是我们今天要讲的一种“坏结局”，它们比起故事的结局是否符合传统意义上的“圆满”，更在意艺术层面上的完成度。就姑且叫它“完成型”好了。当然，它和我开头说的“遗憾型”没有谁更好，只不过是侧重点不同而已。而就在“完成型”里，把对艺术的追求做到极致的，还得是那帮日本作家。</p><p>脱离了形式的限制，日本近现代文学的角色塑造和西方悲剧走了完全不同的方向，朱光潜在《悲剧心理学》里借布拉德雷的莎士比亚悲剧理论指出，传统意义上的悲剧主角往往不是普通人，而是“处于高位的人”。这个说法远承于亚里士多德《诗学》里的悲剧主角观，到了布拉德雷这里，被具体化为莎士比亚悲剧中的国王、王子、将军、领袖和那些大族成员。他们的坠落从单纯的“私人不幸”，衍生出一种从高处坠落的崇高感，即人所处的位置越高，摔落时越能让人看见命运的分量。但对于东亚人来说，悲剧感是越来越被下放的，我们往往会把目光更多地放在平民，而非天生贵族身上。像《骆驼祥子》《活着》《心中天网岛》《春琴抄》这种例子一抓一把，有意思的是，写市井生活见长的谷崎润一郎同时也是一位SM大师，不过这都是题外话了。 总而言之，当普通人的命运也有了承载“悲剧性”的资格，日本艺术家们开始追求更细腻、更贴近生活，也更个人化的极致表达——在这样的追求下，破灭——无论是美的破灭还是自我的破灭都成了一种“完成”，从而诞生了“破灭美学”。</p><p>与我们常说的“物哀”不同，举一个简单的例子：物哀是看到落花，从它的易逝衍生出的感慨；而破灭美学是觉得既然花会落，那不如把它点燃，来个更彻底地“盛开”。所以《金阁寺》里的沟口要烧掉金阁，《地狱变》要烧死画师良秀的女儿，《春琴抄》要让春琴被沸水毁容，然后再让佐助自废双眼。只有这样，故事前期铺垫的种种压抑、扭曲、痛苦的情绪才能在破灭的瞬间走向一种涅槃，让角色得以触碰那种平时只能仰望、无法占有的绝对之美，来完成审美上的逻辑闭合。</p><p>当然，这也不代表“坏结局”就更高级，一个故事的走向一定是从开始就奠定的。像四月新番《落语朱音》里的落语，它的人情故事很多你从一开始就知道会是个好结局，我们看的就是落语家们各自不同的叙事技巧。里面的角色也大都是善良且朴实的，像朱音父亲被淘汰那场戏里讲的《芝浜Shibahama》的主角，最多咱也就说他是个酒鬼。同理，像谷崎润一郎他们也擅长用各种叙事技巧把最后的破灭变成一种预料中的结果，这些破灭美学故事里的角色也自然一个比一个“变态”。所以“坏结局”和“好结局”一样，是故事经过一系列铺垫和暗示之后的一种“必然”。这也是为什么，永井豪在《恶魔人CRYBABY》的访谈里说：“美树之死写到一半已经无法回头；如果恶魔人救下美树，故事就会变成普通漫画，也等于作者否定此前剧情的发展。”</p><p>说实话，在美树被杀死之前，甚至可以说，在确切地看到美树的头之前，我还是对故事的走向抱着那么一丝回转的希望的。毕竟，我们看过了太多最后时刻主角救场的情节，哪怕前面的一切铺垫都是在往世界毁灭的方向走，我们都可以相信以不动明的力量足以救下美树，甚至在最后重建世界的秩序。毕竟某个连载了7年，总会时不时刷新在新闻上的漫画，它的结局都能是一场世纪大和解。但CRYBABY还是选择让人类杀死美树，从这一刻起，不动明与人类的连接被切断了，他通过战斗所守护的东西也变得抽象化：一个活泼开朗、充满了信任与爱的少女变成了人性最后的幻影。正如《春琴抄》里春琴被毁容，那种具象的美被从肉身抽离，变成了某种绝对的美。</p><p>CRYBABY我每隔一阵子都会打开再看一遍，尽管已经知道故事的结局，但我每次看到美树被杀死那一段还是会忍不住流泪。自然，我们如果没被霜之哀伤扎过，通常不会有喜欢看真善毁灭、美好凋零的毛病。古往今来这些艺术家们也一定不都是抖M，在我看来，他们做的刚刚好用布拉德雷的说法概括：“悲剧让我们可以极鲜明地意识到被浪费之物的价值。”</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ACGN杂谈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 视频文稿同步 </tag>
+            
+            <tag> 文学 </tag>
+            
+            <tag> 悲剧 </tag>
+            
+            <tag> 恶魔人 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>为什么ACG行业出现了越来越多的“油泼三文鱼”【视频文稿】</title>
+      <link href="/2025/11/14/%E5%89%8D%E4%BB%8E%E4%B8%9A%E8%80%85%E8%81%8A%E8%81%8A%E4%B8%BA%E4%BB%80%E4%B9%88ACG%E8%A1%8C%E4%B8%9A%E5%87%BA%E7%8E%B0%E4%BA%86%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%A4%9A%E7%9A%84%E2%80%9C%E6%B2%B9%E6%B3%BC%E4%B8%89%E6%96%87%E9%B1%BC%E2%80%9D/"/>
+      <url>/2025/11/14/%E5%89%8D%E4%BB%8E%E4%B8%9A%E8%80%85%E8%81%8A%E8%81%8A%E4%B8%BA%E4%BB%80%E4%B9%88ACG%E8%A1%8C%E4%B8%9A%E5%87%BA%E7%8E%B0%E4%BA%86%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%A4%9A%E7%9A%84%E2%80%9C%E6%B2%B9%E6%B3%BC%E4%B8%89%E6%96%87%E9%B1%BC%E2%80%9D/</url>
+      
+        <content type="html"><![CDATA[<p>俗话说得好：“过劳者死，过慧者天收。”这句话本意其实和知足常乐一个意思，叫大家不要对自己有太高的要求，开心快乐地过好每一天才是最重要的。可有些人啊，他的理解能力实在是差劲，看到这句话非要往最极端的情况想。既然过劳者死，过慧者天收，那他就要做一个完全不付出劳动，也不愿意动一点脑子的人。这种人一旦出现在工作中，将会对周围的所有人造成毁灭性的打击。</p><blockquote><p>（注意：本期节目不点名任何团体、个人、IP，叙述视角也均以“我”为第一人称）</p></blockquote><span id="more"></span><hr><p>大家都知道，三文鱼是个要么生食，要么熟食的东西，可当它落入那些既不愿劳动，也不愿动脑子的人手里，他们又因为这是自己的工作而不得不付出那么一丝丝的精力时，油泼三文鱼就诞生了。这时的三文鱼没生食的鲜甜，也没熟食的肉香，你只能看着泡在植物油和鱼类脂肪里的变色鱼肉破口大骂。运气好的话，还会跑来几个擦屁股的小弟，装模做样朝盘子里丢几颗花椒给你调调味。</p><p>那些优秀的ip也是一个道理，它放着不动是好的，精心去运营、制作是好的，唯独在经了一些人的手以后变得恶臭不堪，腥气扑鼻。</p><p>这种让人倒胃口的操作里，最常见的大概就这两类：一种是毫不相关的明星代言，另一种则是续作崩坏。今天我就从前从业者的角度，顺着这两个方向聊聊，看看它们背后到底是什么逻辑。</p><p>我们先说明星代言，这似乎是最容易被接受，理由也最多的。像什么“破圈”、“公款追星”、“商业价值”，似乎每当一个IP找了毫不相关的明星来做代言人，水军的帖子和IP受众的吐槽总是这么几句话，到后面黑子和粉丝用得都是一套文案，编得也越来越离谱。</p><p>但事实往往没那么复杂，其实在这种决策上，大厂和小公司都是一言堂，只不过前者的核心是负责这次项目的工作室的老板。这些人在这类个性化的决策上和大家刻板印象中的煤老板是一样的，只是他们的审美更现代化，让人实在说不出“你可以永远相信煤老板的审美”。对他们来说，选谁做代言的最关键因素是能在和隔壁公司、隔壁部门的饭桌上更有得吹罢了。</p><p>我曾不止一次目睹过他们是如何在这种面子问题上较劲儿的，直白地说，他们往往会像幼儿园小孩叫喊着“我哥能吃屁”“我哥能吃屎”一样单纯且投入，至于怎么解释这个明星和IP的关系，或许在他某天刷到网上有人骂的时候，会截图发给某个主管，最后落到一个日薪200的实习生头上。</p><p>据说，那些玩收藏的行家们看到真正的好东西就不会看第二眼，可我还发现，有一些ip创作团队在出了一个爆款之后，脑子就不愿意再动第二回。我直接或间接地接触过一些独立游戏、动画制作人，他们的困境往往在于其强烈的表达欲与落后产能的割裂，这使他们在创作中需要不断地做出取舍。这也是为什么很多成功的小成本作品虽然都有详细且丰富的背景设定，而真正直观地呈现在我们面前的，往往看上去只是一个逻辑通顺的故事一样。这种对于取舍的把握几乎决定了一位独立制作人的成败。听到这儿有朋友要问了，我们聊的不是创作团队不愿意动脑子的问题吗？怎么拐到了独立制作人？这正是我要说的：不少已经有成功ip的制作团队，现在完全站在了独立制作人的对立面，他们手握大家喜欢的ip和有效可控的产能，却已经完全丧失了表达欲。但钱又是一定要赚的，于是只剩下提纯粉丝这么一个做法，他们会把玩家社区里的那些核心粉丝的发言和二创嚼烂、咬碎、吞进自己肚子里再吐出来。哪怕原本的角色性格大变、能力设定吃书、甚至是吐得时候不小心吐出个什么私货，他们都不在意，因为总会有人买单的。</p><p>想必看到这里的朋友已经发现了，种种这些让人匪夷所思的行为完全可以概括成一个字，那就是懒。这种根植于行业内的懒惰，和现在的美育一样，早已经是积重难返。而改变现状需要的不是从业者或是KOL的口号和倡议，而是我们作为观众的拒绝。</p><p>最后，来讲一些题外话。一些朋友会先入为主地觉得，本就喜欢ACG的人在工作之后的负面情绪是来自于“喜欢的东西成为工作”的那种饱和式接触带来的疲劳。实则不然，当你选择进入这个行业就会发现，最先要放弃的其实是你的创作自主权。ACG行业或许看起来年轻、开放，但和所有的商业活动一样，你是为了数据工作的。就像时常可以看到人们吐槽，一些成长型博主总会从指导人们就业的学长学姐变成大厂里号召内卷居高临下的爹味形象，这其实就是从“为了爱好工作”到“为了数据工作”的变化。以编辑和策划为例，公司需要的其实并不是创作者，而是一个枪手。如果不能接受这种身份的转换是很痛苦的，我曾经帮助刚参与工作的朋友修改过他们卡住的稿子，当时ai还没有现在这么普及，多数情况下，稿子最后通过时的状态和丢给ai写没什么太大差别。现在他们自己也开始调侃：“我不是什么策划经理，就是个改ai稿的文案。”</p><p>在我写这期视频的文案时，一个朋友和我聊起她之前采访某家游戏公司的美术，当问及游戏为什么选择现在这个画风，对方有些尴尬地表示：是老板安排的，其实他自己的专业和风格是另外一个截然不同的方向。</p><p>所以，在我个人片面的经验和见闻里，工作对于自己创作能力的提升其实是有限的，更多的，是带给你对行业流程与规则的认知。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ACGN杂谈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 视频文稿同步 </tag>
+            
+            <tag> 行业观察 </tag>
+            
+            <tag> IP运营 </tag>
+            
+            <tag> 职场 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>《歧路旅人（八方旅人）》简评</title>
+      <link href="/2024/09/15/%E6%AD%A7%E8%B7%AF%E6%97%85%E4%BA%BA%EF%BC%88%E5%85%AB%E6%96%B9%E6%97%85%E4%BA%BA%EF%BC%89/"/>
+      <url>/2024/09/15/%E6%AD%A7%E8%B7%AF%E6%97%85%E4%BA%BA%EF%BC%88%E5%85%AB%E6%96%B9%E6%97%85%E4%BA%BA%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>IGN：<em>《歧路旅人》就像一场成真的 JRPG 美梦。它的战斗系统和美术设计向 SNES 时代献上了深情的致敬，同时也用令人兴奋的新颖方式推动了 JRPG 设计公式的进步。这并非一次简单的模仿经典，而是将真正新鲜的创意和诚挚的敬意，包裹在了一个美妙迷人、新老结合的包装纸里。</em></p><p><em>——Seth Macy，2018 年 7 月 12 日</em></p></blockquote><p>自通关了SE在移动平台上线的<em>“混沌之戒”</em>系列之后，我对像素风格游戏的热情似乎就此消退了。</p><p>我算是RPG的老玩家，哪怕不算<em>“黄金太阳”</em>系列和<em>《鬼武者》</em>之类主机上的知名作品，光小时候自己折腾着安装在老款诺基亚的那些早就忘了名字的JAVA游戏就有少说十几款是JRPG&#x2F;SRPG。</p><p>而<em>“混沌之戒”</em>系列的3D美术风格象征性地将我的游戏生涯划分开来，在那之后我几乎没有再通关过一部像素风JRPG，哪怕是本文要讲的<em>《歧路旅人》</em>也是发布六年后的现在才打开。</p><p>当我进入主线的第一感受就是：</p><p><strong>希望所有像素RPG都可以按这个质量重制一遍。</strong></p><p>几近完美的视听表现和理想化的开放式世界构筑重新激发了我对像素风JRPG的兴趣，但随着游戏时长的增加，它存在的问题像是缓慢侵蚀这个像素世界的某种“虚空BOSS”，让整个游戏过程显得空洞乏味。</p><h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>SE申请了专利的“HD-2D”+西木康智的配乐创造的移轴摄影风格JRPG世界，光这句描述就足够让人对游戏的视听质量产生相当的信任与期待，它在这方面也未让人失望，随便把我录屏的一节截出为例：</p><p><strong>静态：</strong></p><p><img src="https://raw.githubusercontent.com/Undermori/test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-09-13%20170326.png" alt="img" loading='lazy'></p><p><strong>GIF：</strong></p><p><img src="https://raw.githubusercontent.com/Undermori/test/img/Replay%202024-09-11%2014-57-29%5B00-00-00--00-00-05%5D.gif" alt="Replay 2024-09-11 14-57-29[00-00-00--00-00-05]" loading='lazy'></p><p><em>《歧路旅人》</em>的场景设计与光影运用实现了在保留复古风味前提下的高清化，无处不在的粒子特效或许并不能让新时代的显卡产生压力，但足够为新时代的像素风JRPG树立标杆。</p><p>在此基础上，游戏的操作系统简洁，界面和谐干净，不论你的游戏进行到哪个环节都可以充分感受到这个世界散发的魅力；战斗系统也是一股清流，没有上来就堆大量的文字和设定，明了易上手的同时又保证了后期的拓展性，结合对战中合理的画面配比，我个人看来都是远在及格线之上的。</p><p>我选了“猎人”海茵特作为初始角色，她的故事简单并且套路化，前期平淡的台词成功地让我了解了她，但也就止步于此了。</p><p>游戏给每块地图都设置了对应的等级，同时作为开放式JRPG，猎人线在角色5级左右时就可以前往“东维克塔霍洛森道”，此处的难度等级是21，进入战斗基本上刚开场怪物就可以将角色秒杀。</p><p>在暗雷的遇敌机制下，一定差距上的跨级遇敌等于游戏结束。</p><p>当第四个人物“舞娘”加入游戏之后，我隐约察觉到似乎是伪随机遇敌，就查攻略印证了这份猜测。</p><p>果然，可以利用“学者”的职业被动配合SL达到避战的效果，这样就可以带着“盗贼”一路畅通去偷后期城镇NPC的装备或打开后期洞窟中的宝箱。</p><p><em>《塞尔达传说：王国之泪》</em>在打开Amiibo宝箱的时候，内容物会根据你当前的游戏进度逐步解锁，也就是说在前期无法获得太过强力的武器导致游戏难度下降。</p><p>但在<em>《歧路旅人》</em>中并没有这样的机制，尽管它的战斗系统十分优秀，却没有给玩家多少越级挑战的可操作空间，高级图更多是起限制玩家初期行动能力的作用；反而在利用职业特长在前期获取强力装备上哪怕不通过相对邪道且隐晦的“不遇敌路径”都十分简单，有些甚至就是明牌告诉玩家。</p><p>例如“药师”所在城市的一间房屋门口堵着一位小姑娘，将其击败后可从屋内老爷爷处获得金斧头。对于选择拥有“唆使”能力的“猎人”开局的我来说，堵在房间门口的NPC几乎就是明确告诉我：里面有好东西。</p><p>为了凸显和充分利用作为游戏特色的职业技能“地图指令”，这样的环节设置本身是很合理的，但是作为奖励的强力武器无疑一定程度的上浪费了游戏的战斗系统，尤其角色装备道具没有能力值限制的情况下。</p><p>当然，也可以不装备，那这一环节就变得没有意义了。</p><p>再加上游戏中有八位主角，每当一位新角色加入，后续的战斗时常会变成3带1的局面。而队伍上限是四个人，推进剧情、练级和进入新地图探索时往往会顾此失彼，新角色前期的存在感普遍偏弱。</p><p>不过仁者见仁，智者见智；毕竟在游戏前期通过SL获取强力道具也算RPG的特色，比传统的只有练级一条路要强；作为对于新机制的探索来说，八位主角的平衡倒也不算什么大问题。</p><p>但游戏中角色之间的关系割裂是切实存在的，尽管最后有隐藏剧情将八个人串联到一起，过程中他们之间除了酒馆内的只言片语外却几乎没有互动或是交流，甚至角色加入队伍的动机也有些牵强；就像盗贼刚强硬地拒绝来自同行的组队邀请就默许了玩家的加入。</p><p>可要依此说它在角色上没下功夫，游戏中连路边的NPC都有一段文字的描写和属于自己的小故事，八位主角更有不少藏在细微处的小细节供人回味，整个世界确实完整的串联了起来。</p><p><em>《歧路旅人》</em>设计的矛盾之处就在此。</p><p>事实上，隐藏和支线再丰富也只是主线的补充，主线对八位主角的描写实在过于平淡和标签化，导致对比之下其他NPC的描写所占的比重反而得到了假性上升，文本（笔者使用的是简体中文翻译）质量也算不上优秀；如果要与扮演英雄拯救世界的传统JRPG相比，给我一种这八位主角也是NPC，救世的英雄另有其人的错觉。</p><p>不论是它发布时的2018年还是六年后的现在，他的角色塑造上是有着很大欠缺的，从六年来网络上对于角色的讨论大都以职业名代称就可看出。</p><p>在我最初的感受中，这种体验倒更像是<em>《魔兽世界》</em>，玩家扮演的角色（至少在前中期）是一个普通&#x2F;精英单位，和传统JRPG相比也算别具特色。</p><p>不过随着游戏进程的深入，就越会发现其主线与支线&#x2F;附加故事的配置严重失衡。</p><p>主角们的章节故事流程基本固定：剧情过场-地下城副本-BOSS战。概括起来貌似没什么问题，但真正上手很快就会感到乏味，因为整个流程你基本在开始的时候就知道后面的剧情走向，几乎每个角色你都能一眼看到头，全程也不存在什么变数与额外的互动和可选项，我甚至都要觉得每章节我控制角色走的步数都是一样的。刚开始还好，可<em>《歧路旅人》</em>这样的流程要重复32遍，我打到一半的时候想跳过剧情却又对剧情抱有那么一丝期待。<del>实在是犯贱</del>。</p><p>完成主线之后自然还有支线可选，虽然基本都是类似“拿棒槌去敲醒偷懒的苦工”这样跑腿的任务，但这对RPG来说无可厚非，其中一些小情节也挺有趣。最令人惊喜的是每个可互动NPC除了对话之外，使用“学者”或“药师”的“地图指令”都可以发现属于他们的故事与设定，甚至是身上携带的道具都与他们的身份或正在经历的事件相关联。</p><p>等等，既然制作组有这精力，为什么不花在对主线剧情的打磨上呢？</p><p>那些似是而非的<strong>大量</strong>“细节”，和现在流行的强行刻意堆料“致敬镜头”做彩蛋，还有“遇事不决，量子力学”的新时代机械降神有什么区别？</p><p>作为一个单机RPG，套路化的白开水支线任务设计本就意义不大，本是适量添加为世界观整体增色就好的东西，尤其是在主线缺失的情况下，强行通过路人NPC互动塞入再多的细节也无法对RPG世界的构筑起到多少作用；这些倒更像是制作组给自己准备，为其薄弱主线辩护的素材。</p><p>我是将<em>《歧路旅人》</em>中八位主角的设置视为其对传统JRPG的实验性创新的，所以预期并不高；<strong>对我来说主线的缺失瑕不掩瑜，但在此基础上又存在大量的支线任务与NPC故事若非本末倒置的形式主义，便是制作组“先射箭后画靶”的敷衍与自我感动</strong>。剧情与角色才是JRPG的内核，而世界观只是延申。</p><p>碎片化剧情的ARPG是合理的，没有剧情的Roguelike也是合理的，唯独JRPG是不能“抛开剧情不谈”的。</p><p><em>《歧路旅人》</em>在剧情上主次不分的设计是对JRPG老玩家们的辜负。</p><p>另外不得不槽，那句：</p><blockquote><p>“——活着，就是一场旅行。”</p></blockquote><p>实在是空洞且平淡，像是尴尬的应试作文。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在我看来，《歧路旅人》是被自己的野心所累，碎片化且平淡的主要角色剧情与隐藏在细枝末梢里需要花费太多时间去探索的NPC剧情加在一起，就成了饱受诟病的“烂剧情”。</p><p>拥有属于自己的独立故事的八位主角在冒险过程中的绝大部分时间像是互不相识，不同地域的NPC形象与彼此之间的关联倒是塑造得温润细腻，如同一颗树有八颗青果，却枝繁叶茂，没有主干。</p><p>当一个RPG未能通过<strong>足够</strong>有深度或精彩的剧情吸引玩家，也未塑造出<strong>足够</strong>亮眼、有个性的角色时，它在玩家心里与其他游戏的对比中往往是吃亏的。那些被冠以“神作”之称的RPG在玩家社区的讨论中，剧情分析与角色考据、二创将会很大程度地冲淡对于其短板的评论。</p><p><strong>《歧路旅人》绝对是优秀的，但其各方面的出彩却很大程度上被多主角开放式RPG的实验性创新所牺牲。</strong></p><p>记得看到玩家吐槽：“八方旅人一方五十，实在太贵，如果能分开买就好了。”现在想来，倘若当真可以分来买，剧情上的问题或许不会这么明显。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ACGN杂谈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> RPG </tag>
+            
+            <tag> 歧路旅人 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>通过GitHub Pages上线网站相关配置</title>
+      <link href="/2024/08/16/%E9%80%9A%E8%BF%87GitHub%20Pages%E4%B8%8A%E7%BA%BF%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
+      <url>/2024/08/16/%E9%80%9A%E8%BF%87GitHub%20Pages%E4%B8%8A%E7%BA%BF%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>GitHub Pages 是一项静态网站托管服务，它直接从 GitHub 上的存储库获取 HTML、CSS 和 JavaScript 文件，可选择通过构建流程运行这些文件，然后发布网站。</p></blockquote><p>和上一篇的图床一样，GitHub优点是免费、简单、快速，缺点是国内IP访问偶尔会抽风，再就是域名相对于有自己服务器的情况来说不够那么个性化（<em>用户名+github.io</em>），根据自己的情况与需求选择就好。</p><ol><li><p>浏览器登陆自己的GitHub账户，点击页面顶部右上角的<strong>“+”</strong>，然后选择<strong>“New repository”</strong>。</p><p><img src="https://raw.githubusercontent.com/Undermori/test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-08-15%20182353.png" alt="屏幕截图 2024-08-15 182353" loading='lazy'></p></li><li><p>在新页面为仓库命名为<strong>”你的用户名.github.io“</strong>并勾选<strong>“Public”</strong>，点击<strong>“Create repository”</strong>创建仓库。</p><img src="https://raw.githubusercontent.com/Undermori/test/img/屏幕截图 2024-08-15 182855.png" alt="屏幕截图 2024-08-15 182855" style="zoom: 67%;" / loading='lazy'></li><li><p>仓库设置中找到<strong>Pages</strong>，记住仓库地址和分支</p></li><li><p>在<strong>WebStorm</strong>中编辑网站部署设置，图片以我自己为例，具体根据自己情况编辑：</p><p><img src="https://raw.githubusercontent.com/Undermori/test/img/image-20240913152645048.png" alt="image-20240913152645048" loading='lazy'></p></li><li><p>在本地网站根目录打开<strong>“git bash here”</strong>执行以下命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></li></ol><p>如果弹出授权网页，确认即可。</p><p>等待部署完成后，你的博客就可以通过<strong>“<a href="https://yourusername.github.io”/">https://yourusername.github.io”</a></strong>访问了，其中 <strong>“yourusername”</strong>是你的 GitHub 用户名。</p><p><strong>关于SSH配置：<a href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account</a></strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 建站 </tag>
+            
+            <tag> 零基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Jolly Rover 极乐浪子汉化补丁【Steam版适用】</title>
+      <link href="/2024/08/15/Jolly%20Rover%20%E6%9E%81%E4%B9%90%E6%B5%AA%E5%AD%90%E6%B1%89%E5%8C%96%E8%A1%A5%E4%B8%81%E3%80%90Steam%E7%89%88%E9%80%82%E7%94%A8%E3%80%91/"/>
+      <url>/2024/08/15/Jolly%20Rover%20%E6%9E%81%E4%B9%90%E6%B5%AA%E5%AD%90%E6%B1%89%E5%8C%96%E8%A1%A5%E4%B8%81%E3%80%90Steam%E7%89%88%E9%80%82%E7%94%A8%E3%80%91/</url>
+      
+        <content type="html"><![CDATA[<p>前段时间在Steam补票了2010年的经典冒险游戏Jolly Rover，游戏虽然说不上很老，搜寻汉化补丁却着实废了不少功夫，10年前后的网盘已经全部失效了，最后所幸在<a href="https://www.chinaavg.com/">冒险解谜游戏中文网</a>找到了附件留档的五个分卷压缩文件<del>（应该是？）</del>解压后就有了这份珍贵的汉化补丁，亲测Steam版可用。</p><p>本文意在为这份宝贵的资源在互联网上多一份备份，方便同我一样喜欢老游戏的朋友，更是希望原汉化作者的才华不被时间所埋没。</p><p><em>本文资源来自<a href="https://www.chinaavg.com/">冒险解谜游戏中文网</a>，补丁的内容提取自“NapTID(无名) ”制作的极乐浪子汉化，汉化版权归‘NapTID(无名) ’所有，转载请注明！</em></p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p>非压缩文件，下载即用：<a href="/download/assets_p1.pfp">点击下载文件</a></p><p><strong>使用方法：把assets_p1.pfp复制到游戏安装目录下的assets文件夹内</strong>。</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>Steam页面：<a href="https://store.steampowered.com/app/58200/Jolly_Rover/">https://store.steampowered.com/app/58200/Jolly_Rover/</a></strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 资源分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 游戏 </tag>
+            
+            <tag> 老游戏 </tag>
+            
+            <tag> 稀缺资源备份 </tag>
+            
+            <tag> 解谜 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GitHub+PicGo搭建图床以及Typora自动上传设置</title>
+      <link href="/2024/08/15/GitHub+PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A%E4%BB%A5%E5%8F%8ATypora%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%AE%BE%E7%BD%AE/"/>
+      <url>/2024/08/15/GitHub+PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A%E4%BB%A5%E5%8F%8ATypora%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%AE%BE%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用GitHub搭建的图床相较于其他图床优点在于免费、限制少，缺点是国内IP的访问时不时会抽风，我因为没有网络连接问题与太大的图片需求所以目前足够满足我的需要，具体选择还是根据自己的实际情况决定。</p><h1 id="GitHub相关配置"><a href="#GitHub相关配置" class="headerlink" title="GitHub相关配置"></a>GitHub相关配置</h1><ol><li><p>浏览器登陆自己的GitHub账户，点击页面顶部右上角的<strong>“+”</strong>，然后选择<strong>“New repository”</strong>。</p><p><img src="https://raw.githubusercontent.com/Undermori/test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-08-15%20182353.png" alt="屏幕截图 2024-08-15 182353" loading='lazy'></p></li><li><p>在新页面为仓库命名并勾选<strong>“Public”</strong>，点击<strong>“Create repository”</strong>创建仓库。</p><img src="https://raw.githubusercontent.com/Undermori/test/img/屏幕截图 2024-08-15 182855.png" alt="屏幕截图 2024-08-15 182855" style="zoom: 67%;" / loading='lazy'><p>和GitHub Pages会要求仓库的命名不一样，仓库、分支、文件夹的命名只要自己可以看明白即可。</p></li><li><p>点击右上角的头像，选择<strong>“Settings”</strong>，在新页面的左侧边栏点击<strong>“Developer settings”</strong>后依次操作<strong>“Personal Access tokens”-“Tokens(classic)”-“Generate New Token(classic)”</strong>后显示为该界面：</p><img src="https://raw.githubusercontent.com/Undermori/test/img/屏幕截图 2024-08-15 185248.png" alt="屏幕截图 2024-08-15 185248" style="zoom: 67%;" / loading='lazy'></li><li><p>在<strong>“Note”</strong>栏备注，<strong>“Expiration”</strong>栏选择token的有效期，勾选<strong>“repo”</strong>后<strong>“Generate token”</strong>。</p></li><li><p><strong>复制并保存新页面的token。</strong></p></li></ol><h1 id="PicGo相关配置"><a href="#PicGo相关配置" class="headerlink" title="PicGo相关配置"></a>PicGo相关配置</h1><ol><li>选择适合自己的版本下载安装：<strong><a href="https://github.com/Molunerfinn/picgo/releases">https://github.com/Molunerfinn/picgo/releases</a></strong></li><li>打开PicGo，在<strong>“图床设置”</strong>中选择<strong>“GitHub”</strong>，按照自己刚才在GitHub中的配置填空。</li><li>如果这是你第一次用，也没有使用别的图床，记得再设置GitHub为默认图床。</li></ol><h1 id="Typora自动上传设置"><a href="#Typora自动上传设置" class="headerlink" title="Typora自动上传设置"></a>Typora自动上传设置</h1><p>在<strong>“文件”-“偏好设置”-“图像”</strong>中设置<strong>“上传服务”</strong>和你的PicGo路径。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 建站 </tag>
+            
+            <tag> 图床 </tag>
+            
+            <tag> 零基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo常用命令+常见功能实现与优化配置</title>
+      <link href="/2024/08/14/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4+%E5%B8%B8%E8%A7%81%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/"/>
+      <url>/2024/08/14/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4+%E5%B8%B8%E8%A7%81%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>记录自己从零建站和优化过程中学到的小点，欢迎大佬指正。</p><p><strong>以下操作与优化配置基于<u>Hexo</u>，主题<u>Butterfly</u>。</strong></p><h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>最常用其实也就这四条：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean//清理生成的静态文件和缓存文件</span><br><span class="line">hexo g//生成静态文件</span><br><span class="line">hexo s//本地预览</span><br><span class="line">hexo d//部署项目</span><br></pre></td></tr></table></figure><h1 id="常见功能实现与优化配置"><a href="#常见功能实现与优化配置" class="headerlink" title="常见功能实现与优化配置"></a>常见功能实现与优化配置</h1><h2 id="如何分隔一篇文章下的多个tag"><a href="#如何分隔一篇文章下的多个tag" class="headerlink" title="如何分隔一篇文章下的多个tag"></a>如何分隔一篇文章下的多个tag</h2><p>用<a href="https://zh.wikipedia.org/wiki/YAML">YAML</a>格式，例如：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">Hexo</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">建站</span></span><br></pre></td></tr></table></figure><p>说实话我之前完全不知道有YAML这个东西，搜索看到别人的截图我还以为是Markdowm语法，结果怎么都无法复刻，最后google具体问题时才发现是YAML。</p><p><strong>YAML入门：<a href="https://www.runoob.com/w3cnote/yaml-intro.html">https://www.runoob.com/w3cnote/yaml-intro.html</a></strong></p><h2 id="如何给自己的文章打tag以及编辑其他信息"><a href="#如何给自己的文章打tag以及编辑其他信息" class="headerlink" title="如何给自己的文章打tag以及编辑其他信息"></a>如何给自己的文章打tag以及编辑其他信息</h2><p>同上，用<a href="https://zh.wikipedia.org/wiki/YAML">YAML</a>格式手动添加Front Matter，附上我自己目前常用的几个信息：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> </span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line">     <span class="bullet">-</span> </span><br><span class="line">     <span class="bullet">-</span> </span><br><span class="line">     <span class="bullet">-</span> </span><br><span class="line"><span class="attr">description:</span> </span><br><span class="line"><span class="attr">categories:</span> </span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure><h2 id="如何发布新文章"><a href="#如何发布新文章" class="headerlink" title="如何发布新文章"></a>如何发布新文章</h2><p>我个人是使用Typora编辑了一个空白的Front Matter.md文件，每次发文直接打开文件、填空、写完文章另存为到**”_post”**。</p><p>另外，Typora可以通过PicGo实现自动上传，插入图片直接在本地拖拽就好。</p><p><strong>相关设置见：<a href="https://undermori.github.io/2024/08/15/GitHub+PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A%E4%BB%A5%E5%8F%8ATypora%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%AE%BE%E7%BD%AE/">GitHub+PicGo搭建图床以及Typora自动上传设置</a></strong></p><p><strong>Markdown教程：<a href="https://markdown.com.cn/">https://markdown.com.cn/</a></strong></p><h2 id="如何置顶文章"><a href="#如何置顶文章" class="headerlink" title="如何置顶文章"></a>如何置顶文章</h2><ol><li><p>安装插件：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-topindex --save</span><br></pre></td></tr></table></figure></li><li><p>在<strong>Front Matter</strong>中编辑<strong>top</strong>参数：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">top:</span> </span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure></li></ol><p><strong>注：top后数字越大越靠前。</strong></p><p><strong>官方文档：<a href="https://github.com/amlove2/hexo-generator-topindex">https://github.com/amlove2/hexo-generator-topindex</a></strong></p><h2 id="Description的文字如何换行"><a href="#Description的文字如何换行" class="headerlink" title="Description的文字如何换行"></a>Description的文字如何换行</h2><p>一般情况一行字也就够了，但是像我这种中二病需要多行“个性签名”的话：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Collector,hoarder and nihilist.<span class="tag">&lt;<span class="name">br</span>&gt;</span>生命毫无意义，仅有审美予其价值。<span class="tag">&lt;<span class="name">br</span>&gt;</span>“全て貴方に 捧げよう。 ”</span><br></pre></td></tr></table></figure><p>加个换行符搞定。</p><h2 id="如何上传本地文件"><a href="#如何上传本地文件" class="headerlink" title="如何上传本地文件"></a>如何上传本地文件</h2><p>有些小文件比起附带一个网盘，不如上传之后在博文中“点击下载”。</p><ol><li><p>修改<strong>“_config.yml”</strong>中<strong>“post_asset_folder”</strong>后的值为<strong>“ture”</strong>。</p></li><li><p>创建<strong>source\download</strong>，将我们需要上传的本地文件移动到这个文件夹即可。</p></li><li><p>插入例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[点击下载文件](/download/xxxxx.xxx)</span><br></pre></td></tr></table></figure></li></ol><h2 id="如何设置加密文章"><a href="#如何设置加密文章" class="headerlink" title="如何设置加密文章"></a>如何设置加密文章</h2><ol><li><p>安装插件：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-blog-encrypt</span><br></pre></td></tr></table></figure></li><li><p>快速使用：</p><p>在文章头部添加<strong>“password”</strong>，例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">password: hello</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li><li><p>全局加密配置：</p><p>通过添加指定tag的方式，可以为所有需要加密的文章添加统一加密操作。在Hexo主配置文件<strong>“_config.yml”</strong>中添加如下配置：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Security</span><br><span class="line">encrypt: # hexo-blog-encrypt</span><br><span class="line">  silent: true</span><br><span class="line">  abstract: </span><br><span class="line">  message: </span><br><span class="line">  tags:</span><br><span class="line">  - &#123;name: tagName, password: 密码A&#125;</span><br><span class="line">  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试。</span><br><span class="line">  wrong_hash_message: 抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。</span><br></pre></td></tr></table></figure><p><strong>具体按照自己需求配置，更多参见官方文档：<a href="https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md">https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md</a></strong></p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 建站 </tag>
+            
+            <tag> 零基础 </tag>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Markdowm </tag>
+            
+            <tag> YAML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>零基础建站流程【个人记录与经验分享】</title>
+      <link href="/2024/08/13/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%99%E6%B5%81%E7%A8%8B%E3%80%90%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95%E4%B8%8E%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E3%80%91/"/>
+      <url>/2024/08/13/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AB%99%E6%B5%81%E7%A8%8B%E3%80%90%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95%E4%B8%8E%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%E3%80%91/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>个人建站记录，主要用于后期回顾，会更新遇到的问题与解决方案，但非专业教程，仅供参考。</strong></p><p>本人基本上算是零基础，建站初期搜罗了不少攻略和讲解，不过大多教程要求先购买域名和租借服务器，虽然在后续操作上相对省事，但对零基础来说还是多了一层负担，与其面对服务器和域名的选择，不如先制作到本地确认好效果再投入使用。</p><p>所以本站使用的是Hexo框架，图床为GitHub+PicGo，通过GitHub Pages上线。</p><p>这个流程下，已经基本可以满足个人博客所需，如果需要更加个性化或有其他更高的要求，后期可在GitHub上把<strong>username.github.io</strong>解析到自己的域名。</p><p><strong>只要网络环境支持</strong>，全程不需要做额外的选择题与开销，个人认为更适合和我一样的朋友。</p><h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><h2 id="WebStorm"><a href="#WebStorm" class="headerlink" title="WebStorm"></a>WebStorm</h2><p><strong>下载：<a href="https://www.jetbrains.com/webstorm/">https://www.jetbrains.com/webstorm/</a></strong></p><blockquote><p>需要付费。 </p><blockquote><p>也有破解方案：<a href="https://3.jetbra.in/">https://3.jetbra.in/</a></p><ol><li>打开网站选在线+星标的进入：</li></ol><p><img src="https://raw.githubusercontent.com/Undermori/test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-08-13%20161147.png" alt="屏幕截图 2024-08-13 161147" loading='lazy'></p><ol start="2"><li><p>网页上方下载文件：</p><p><img src="https://raw.githubusercontent.com/Undermori/test/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202024-08-13%20161923.png" alt="img" loading='lazy'></p><p>此页面不要关闭，后续还要用。</p></li><li><p>解压，微软找到<strong>scripts</strong>文件夹中的<strong>install-current-user.vbs</strong>双击，</p><p>MAC为<strong>install.sh</strong>。</p><p>等待出现弹窗提示DONE。</p></li><li><p>回到网页鼠标移动到WebStorm下方复制激活码回到软件粘贴激活即可。</p></li></ol></blockquote></blockquote><h2 id="PicGo"><a href="#PicGo" class="headerlink" title="PicGo"></a>PicGo</h2><p><strong>下载：<a href="https://github.com/Molunerfinn/picgo/releases">https://github.com/Molunerfinn/picgo/releases</a></strong></p><h1 id="本地环境"><a href="#本地环境" class="headerlink" title="本地环境"></a>本地环境</h1><h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p><strong>下载：<a href="https://git-scm.com/">https://git-scm.com/</a></strong></p><h2 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h2><p><strong>下载：<a href="https://nodejs.org/en/">https://nodejs.org/en/</a></strong></p><h1 id="Hexo相关配置"><a href="#Hexo相关配置" class="headerlink" title="Hexo相关配置"></a>Hexo相关配置</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>右键<strong>“Open Git Bash here”</strong>输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>在本地任意位置新建文件夹作为个人网站的本地文件夹，在文件夹下右键<strong>“Open Git Bash here”</strong>输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure><h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>在<a href="https://hexo.io/themes/">主题库</a>中选择自己喜欢的主题，使用WebStorm打开个人网站的本地文件夹，在<strong>Terminal</strong>中输入对应命令即可，以本站使用的<a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly主题</a>为例：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure><p>到这一步，输入：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><p>就可得到使用了主题的本地网站预览 ：<strong><a href="http://localhost:4000/">http://localhost:4000/</a></strong></p><p><strong>注意，在命令位置使用CTRL+C停止本地预览。</strong></p><p>后续的优化、自定义、有关插件的安装与对应命令本文不再赘述，参照自己所使用主题的文档即可。</p><h1 id="图床与GitHub-Pages"><a href="#图床与GitHub-Pages" class="headerlink" title="图床与GitHub Pages"></a>图床与GitHub Pages</h1><p><strong>GitHub+PicGo搭建图床见：<a href="https://undermori.github.io/2024/08/15/GitHub+PicGo%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A%E4%BB%A5%E5%8F%8ATypora%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%AE%BE%E7%BD%AE/">GitHub+PicGo搭建图床以及Typora自动上传设置</a></strong></p><p><strong>GitHub Pages配置见：<a href="https://undermori.github.io/2024/08/16/%E9%80%9A%E8%BF%87GitHub%20Pages%E4%B8%8A%E7%BA%BF%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/">通过GitHub Pages上线网站相关配置</a></strong></p><p>在完成GitHub Pages配置后网站就正式上线了。</p><h1 id="可能的问题与解决方案"><a href="#可能的问题与解决方案" class="headerlink" title="可能的问题与解决方案"></a>可能的问题与解决方案</h1><h2 id="git报错"><a href="#git报错" class="headerlink" title="git报错"></a>git报错</h2><h3 id="hexo-d-时“Please-tell-me-who-you-are-”"><a href="#hexo-d-时“Please-tell-me-who-you-are-”" class="headerlink" title="hexo d 时“Please tell me who you are.”"></a>hexo d 时“Please tell me who you are.”</h3><p>这个问题的解决办法它在报错的同时就告诉你了：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Run</span><br><span class="line"></span><br><span class="line">git config --global user.email “you@example.com”</span><br><span class="line">git config --global user.name “Your Name”</span><br></pre></td></tr></table></figure><p>你只需要运行下方的两行命令，将引号内的内容换成你的邮箱和名字就好。</p><p>但是不得不槽，头一次看到报错然后出现这句<strong>“Please tell me who you are.”</strong>还是挺恐怖的，有种科幻电影里被程序质询的感觉。</p><p><del>虽然的确是在被程序质询啦。。。</del></p><h2 id="PicGo报错"><a href="#PicGo报错" class="headerlink" title="PicGo报错"></a>PicGo报错</h2><h3 id="上传图片时“You-must-be-logged-in-to-use-”"><a href="#上传图片时“You-must-be-logged-in-to-use-”" class="headerlink" title="上传图片时“You must be logged in to use.”"></a>上传图片时“You must be logged in to use.”</h3><p>如果你已经配置好了所使用图床的Token，那你就和我一样是忘记修改默认图床了。只需要在软件中找到你所使用的图床，再点击下面的<strong>“设为默认图床”</strong>就好。</p><h2 id="网页报错-打不开"><a href="#网页报错-打不开" class="headerlink" title="网页报错&#x2F;打不开"></a>网页报错&#x2F;打不开</h2><h3 id="顶部导航栏的tag页点击后404"><a href="#顶部导航栏的tag页点击后404" class="headerlink" title="顶部导航栏的tag页点击后404"></a>顶部导航栏的tag页点击后404</h3><p>这是因为没有生成标签页，其他页同理：</p><ol><li>在WebStorm中打开本地博客文件夹</li><li>输入“<strong>hexo new page tags</strong>”</li><li>会生成“<strong>source&#x2F;tags&#x2F;index.md</strong>”文件，打开并编辑即可。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验分享 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 建站 </tag>
+            
+            <tag> 零基础 </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>生日</title>
+      <link href="/2024/08/10/%E7%94%9F%E6%97%A5/"/>
+      <url>/2024/08/10/%E7%94%9F%E6%97%A5/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">  <script id="hbeData" type="hbeData" data-hmacdigest="7bad138ac1457001c84b18a08d012e8c8f0ceea85cf6c6699b9bdae98d03c06b">fb0f79042ea8a01b9bf0fc0b1ce93cae06bc16c18802561f5408f96c71570854eceedca9fdbe2868e5a8d799149f16f2e0b37382c1bb0180418cd39a4ffe6991e1f2a18b43f51b5b359aa8becf8a03a2483805d4310ce573bc07bbc1f0876f14bc3fa8a72c9bfddcb47773fa88384bc18a1c4b6235203cabf50077f855578e19846dfccfc6de36a4556f1a732ac995d5f4953464aa6754d0ee03ba890079a0e581b65e069d59ce2223d433cd57fc7bd1f224e554d033a37557494e6539adbc11320d7a85c30911a36acb45c6b07a7a742b4f4d9eb4a09c967dccdd328aef7e784984b9098ae5f3848e3b3128588e2884327b095cb472c5f82bbc892a560e2af8940d0c7f2bb43579e067203bdea46cb55d07e49f4160edf2c55067bb1f75177d0fb4aff37025b3f31c190a90019292da9767dd73a752866dc423f396201336debddfcc15ec8d064a79fcb11b5e8463247e114da645d9c726a81d73cf6a2a8d9dc692b36a56977a668e9f96f45287e88338cbaa44e678658202f0f37af6cddeb7f1ed0905e03bc76428f570793e5786715a1b0cc53c46804d63d5ee30e6626f8778c6cff5eeceb1eda326debd2cea9b0e08b3a9f9d650345ecb99ba9a71b82a06c2d2767274c2ddd71ee8572fb5013419f47f6c66f31cf03587ed4034bb9b79556195b0b549745eecf11c3dc5294b35afe3fa7ca4be765b51450e565aff7be1dbd25754ab35af407a42d612fb9c48fd03ec04a48df26a6e923007a3fb26951cf2413186d4440cfa0e9053ac9153edfc5dd83b028748a57c6ac5904b2cc3e99e8a4173d8cd9359e46641e56df4b47683484b3895e4e0a86c14756b2314cb50118a29260aa85e8c8959d336c04aae9b6223461bb2457f04dc325c1e8dd9671666441dc7d0a4c9f27e89add73d34c1e26c2c21e6bc3f9b19ef389fe93a2591d319ba5847a1c79debfc8008dd8c94fc74ceba828e20872ed0281f47476fc4ce84b1b15f0546f4ffaf6c275a8fc13d4056764bfdf4ec2f8204151a76a6f0a9609eeb559f5685cc12f5fa7a9454ef521a2106b5edbb4a808abc80f81f08d5c148d32fbae6c134ff2920040602edef1f598687c0d4c8b3ba69cc0bfc1f1c47e6da68c7f593dc3f9f3fe9c8f11849905cb0f764893215d73256383be4171cd80a3f0f028a38b09ebb761b5100d313715cea2c1c34cb5b7a3611d1ceb52794eb9c9f68d11dfe2cd816f563f437bcf3608726a845e04a5c4af41ad6872497e6581154982b6a9bd875a49ac453e319e682af77c13b5dba1ea358de051c41363dda2f63bc346041b109fc7576ea93fe7dd7f33fca0df6869310a308f7799b208161e7643abb22f634e4d1447ab4b70b590e6f91b9e26711e9e92fac5216ee6864c92768d191f0732ab979194643d51a5b54b2c67dc53391d076ba9a815a6860a86fd20584c315741255611e237859fcd26c28c9812d3618e02b4b0940cf2e86dcc7e4594514c3e5678431a798371ce1c948d34c5f57d051ca1af2a41db9363db2efacbab0ecf1c266bbeb552398c772b5ae3be9dc8d0508fa3958f2f22b56ab4ceefbe3f6c991aaee1bd9f390f8f7a07bbe658bd85fe214e7ce24c7549e50af182747a3c5cb05bb13e70c8b1c31a7951918d44f60100d3343e3ac17c78995cf19584351af6549a8abdcc815ae373822fcc67b11752a732f3d728ce7504f24723139e9276381a4387edf6dfb2384577a50abe92cddab40a56c6cd619745710660b0f800c473826f7fcc1233c677b700d8060db7ec15ddddcc11b453e870b4fb7df58b3c38943825e3fd982029eb169ad0d1e393b54cd5098ff67a334c90337740a40e6af2cbf4199ee658cac9fda646a40028d164558511e782e9adad29b34da757ce161fe641472ff3338e8bf33ab0dc9d7c62a7239a1c771cefbd52df49344f14a0c908dbec8582259b431124516b231008ba8b977b2762fd9730c6a9216464e31d37cc342560dc3a6a68a2575f189bb08f6232f8e3f811fa02f634fce53e75007818ebf4d7c8f686ceecd66ba95704e8c1d84900a19735f47176165d78f20e059169380256fd4084004b84d06134c3e9bec03ec66ee4af07a8aac3520a42660fbd6279419c75eb81c01ec7820d945f84cb510aa1e535ed565b802fa609d9f1dc739c12c4ad75def30c8b2231f9b628b6723c29195e208ec97e959bb9f788d1e899b9b4d371caa17be5e1dc5b780b51d48071b85642affa7cac702e9a2ca8a54fe10cdcd2e28581f2a574f87403e4b3e700445e2809956e05cefd88acbc1a1a02339e194644c747b27c20332f1900aea24d2bd7eb2017f1749f53bc33235de0731a1eef9bc71258f6c60bb88d46bf9381bf22223d1ec90615cb0b591c0847ade1d2e2dc085725bee59a151395e636e66a1c7abe1698b85897a83b5203cded2844a09df47e35418bb53413b5452be10de52406d5847df57c849da8e47ef80424e65aecfaaa27a77b0b9df101b4574c6f8e0d9920700bfb3379fa55cf72a5f9dcc3b0ffbbd8e126b675ad4ff90b8ec7d7bc80510d7e045806568f8b2319c98a84bff646b118e8434de680ad5238194c324eefae51f482c3a86c5d81f895ebeb4e2e622ae2aad808a013e5fc41918554a3f664a13ba04e82d5348a760e4f6741f10434edb5a8fc686603e23a07ac737143d995024b1e111eebdc20c38a97cb138c29ce09002fdb2083c72c831d66f8f2f7f67d04a09ef5d6dd6550a4179c234dcaf2de6f9163ad7584441fbfa2de392c9ff5694d9c7d527de71e6ae9ba765b498075998799951a1e909aa34a7dac060d51180db199c9c03ce6178970f213bae4731f476a45c1ad029fe00957d5a38f478e7ec552be87e98b7dbb691cb4cceedb344a4ea64511658948814fd659bc0b3b4060abb76a66df8d0cc06e52ea69c831ae32ac4e0aebd372c36e102c9ccc8e6b5becb62d4f4d898b8c9de9d33a5ad5c3e3de3a608d53fb5</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请输入密码后查看！</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>路</title>
+      <link href="/2020/03/25/%E8%B7%AF/"/>
+      <url>/2020/03/25/%E8%B7%AF/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">  <script id="hbeData" type="hbeData" data-hmacdigest="ffcbb6e93a8ece87452a8b60d15c7d9b99466e6370873528e25636550744ade9">fb0f79042ea8a01b9bf0fc0b1ce93cae9a1e45491742d7851d3721e4cbc14eda99dbb88bda2a9dbea2268ee1fcffdebe6a06c0fed27ca32d6b7937cf8a871b4278a576c700d0c5c567151fe98fb9097c4562b1ebed4a62b9cd3fc4eb542e91f8e9d7cfbf9f133bfcc996530dccf81e14d6881252fdb5e45f8189413287c74c07f42f29f80294529d5bcf30eb339356c2451040df84847e57a279774d2cf0714049a8adf270e7b69a84e5c633098d7fec31aea0f1a09a750f4fed577f0f165ff576bcf687d5830c53e75b2a63b7cd66e6478078ba0db5aa46778245231b0765c236c74b8991b44aa94f1da881797d335f66cd7ff0809283bb550ed402e9bfa8367837f2d93c71dacc824160bdc25d396f2477e978c21b062dab0f62b6d938dc4ec9f1955838f88c471e0817077804443017a1ff2cf9cd5e14ee89c6501af72492f21b3af1ec9ebe0109c78b2246cf640f8cf9ef4ce893cc3edfc9b2b9328de5c455f33a1ccd6ee5f6d61c6da94eefed11c29f07995e2f11dd1462eb429f33f83f0cd9650827ef6f8fb624c8051f25ae699a47a0f0aaa47ab96959aa02b55b21f873c7c63980d79625fa72421e75af196406dd75cfa7570a62c79ac235c343d2fa717a07ea83ca060d0267a976b812afe0661a2e17461d4226d2ab63bf5c45e5e93630ee0754e9910d41f870f507987e887ce3df059a94f3037baaf8121a0934c1cd7d7c98c449bff042a75a57b15b248af89e7a35e3e4b67500128ebd815b7698a1a5958a37fdbee4ccdf85aab10c88d74c0cae35195401d7978cb52ad1cb0bb528ded9e856d9acbfe7b495e0de1aceb6d6cbb07a71548b3479319aa15b466d9f5ba9d44138cc5fdf85e4e83e5e8d57a3aaeab31dba37cb5aea6b5eb034f9b7860d183955eb7b3935e4b67a6f2c7e8789a8018a425853337d7cf41ef878c81db8c0db3be16d51e80a2b0e44d06831959a3054e9004df0ebfb0dc6fcb1ac23ea21127dfc55270ada9b9cb7b6f1e366b80060e7571adfb13b04ba601612ccf7da8ab872a7153b00d71027f8a0e6805b07a94c659cbf5f7c117e0b3a486b804516bff060c37cffa3b6f453edbce5ccaa91b920f6a53803667c8562adda65f6cff632f4ca4cfd03eee59c103d2c7e7a76d443b5bf033c36ab9c573d11b0537889d29e9f70de6420dafae0a4cd9be8ccb5af26fc98634be8c80b52b95ab288a3b1f0507d003516c510542834d154e7571340cd9994b75258b5a6c0f8caa14c808152567805451620f2caaf370deca5ed7c41eab7bde56c6996afac2364d7a4e143dd1d6e836141fc9d8d1cf2aad0dc658a1e6f61ec307a1463e42cc0040e52a4c49de177b4e15322342fbf66e7063a3bf5bf0022652eafd833d8564ead7e642d257eb178449428602cb55e951c454ee7b0d144ea7ab3192fb19d2bd41a252db87451fdb73b81eaa87e6f68e1a36bb9df2c74cb6f54fe7652901bc9b49bbb67aebf8e3a3861055c0659b1f19a471f4d410f4dfb4e520aff73927115ad67a377eddd371f79471c81fc6f4624f0db2c0ce824876857615f2ea7fbda107eb91601e9602ba7bda58a1a5d692e70c86d065a496c724545726f8562c357c584ba2141ab34333a228980a0e18a18b3167ef13bf4cfc6b9c9a6f0aa60836067ee84127e020f96d74ce9be7324828759b75f599f9a28255c9862a305e767a56dada8a659eac743bd837cb0f777561f73770eeec94f8f48945880fc53417e013fda5280aab5de561a59dd9bf2116ac64b021422adac9c582d5fcc5f268c7954e500654c288aba5bc672c0b2be9d99e34eb234dd437bd55cd9917572bc9c726180c191cb18475ae66d4e73c13076f32f4658d8637847c8d23323441f3afbcf80ca46c35f395ffc61ba521a797b41b66d27c1a307b07eef75215261f9b8f9421292db7fce5372ed9c8c987f0994b0dfa92ce154b1f3a0e40b48f312d77eae3d21dad780597b1a6e15d46e4787da0104eb45f834c548507ba25b1c44ceb5af04e393c26916a6720881bdbaa285db987005edadb12993e4b69b82aff2b758311cb792c76ca4dec1a562ddb8127b31279b804d0c91f9e9ff18e3d16946e0b63633bc1db500faaeadaad8c6680ea66839beea8ffd023e57f38a00c3654c09028ff56dc670149c49d78ac10d2db73726bb1dc9a0f9581272092e441a04c86d6e680ec47b353c1cafd768897bf9790c0dfd848dbadcfdc4f4aa614ca5a17fb515358f4149a1d348e01bb36defb50d8a2fc5e0ea719990f871749b530657c3a96021347cdcdab87da568a987c9515890611da2cb1a2480a942998946846c7d47ca8fbbb04ba1ded5f898a0961dd63c2bffd1285ad30d375768a16df3288f77f62f0d913d5ed898b3870b07ccf5325e6837e30db9aff36dbaa7ec2e99596106617e2ce9606dd1d89b24d24dace5815c14181cc84732ba65cab1fc214b798c642c56ed57cb725f4b1d0344c723f6873cc07a506cef6b40a0f291e0adade373ab92bbcafe930dd50be3298fb4e9496791d14274592e5c4e48617a7351725ac61420a4648bddb95f3064b01dad5020ca82e3cd42fc966f14bfefed81b9beb1d545989e9a4f6c37cbc23606dc59265392fd7110ed421dfba626c9fd5dae471c31d8f95c751642ee368eab294f3ff3305a15e9f20e84fc8343e83377edeac2ffc9695b55a5ce96dee2aa557a9e9c7581fec41e5626259e7ca34a023354585052700f00d5ee1863ecd0c4ed562f5d728b4e970819c4f167b03ef71d028f120cbd4b3ab433bb33422888d196b2f5e62e882aa86068824416985fe05a1c1ef2399dc4e65207190fe9f34dfaf0049940baafed709c964760710cee1d2d64be557fc6bbefc78506606ba0462c402de69ed1a9e93e6144d59ae7e2020286662e816e926326891728a799c8c1e3265676e820adf9b300164905c92949e7311d183e089aab869f89ebe53bbc62daf355fcbe83d4fa0d6635b400648d53cf8439a9e33be207b59274c3930187d9cbc24fc9ddc4ff57a678d6634670ba008d19f45e763b9f47dd8153f7610d4279e5418a36f1759cfc9c1e90d16ee3761b495d7c6c82a11370dfa6b230aa31da29c801381d122c2ddf9516941ad17b527867508dd2bbbe54ee7a45176d80f4de542ca04172c58322dc30d0b0c535d28f0da9bbcc65fc624b44ac6de66e7a7a628aab81bcb24e4b3f855701e509177d388b7f96514c22964692e440be830904cf19f90cf65d85651094527531d60c7d953870b12129e68e7f6b41fa6cbb142ee26f0c632f1946c64d572dc63ced569fa1deb9e2553291989a0a18b017ff90becd3b6a2c16427fcfbc5544d91961d216c70896b2b6d09d1874c428290a5e288b5e1f84b4e8022b630f162969a2bb75a4c58626cf9262b6cb1e0c287f4b3cb6e5ca7e259c15873e4b3d68433e5e2cc4762ad438c0125d0fc0b559ad062b14b6c61547c84846cedf4adb26c1f762519a55f62f3db71addc2659b3c6be565f91bd6215089e9bed06922e20693991d08397b5bce7729ab712d8f28a8ccc97d828afd1bd2b59e3735b9fc5498cba50bee30972f0b19cc3503246f9d7204b2fe3c9f3a5873be87a2f47fdb66719039b737d21f12e608acc1b61dbb2d7803c8cc97e45afee3c55be3bdbce4a2dafbab1a44bf0dc5c2062c954c6c51dbf55499960414bd1132206ed0117c0a0ff0328cac62f1bd9dc6bc35436b6c80c1c6e14262e7b2b7b2aaf480a1a1cba11d844a08490be38058a663ab183d90a5acc1f51622d188efbff27c21237b2dd6bb47ece43fec79711b9e0d55d0a22ec996acf0054d88a92358772ce543b6e3c8b956fafb4fe3f326eb8c515cb7d0e596beda30358ff7395b3a1e60424025c994996e5a119b969ae9649d9fda3a0581ab340f596b67bf20654c7226f4b2fa664473b3d8b361643455ef4872ca98216b46c394c16ac3f15dcee6e8858bf916b5cbea19518542b96c84848fd1a80f1e989daf7feba6b0ae7403404506dac67e83b944b66b25fa009f22b4058927d5ea85f7d1412f37a4154c504060b08139f8b99099cdaa01e6376547e5a7c101d4c1e5f9757aaa83735f536db27978a028f68fef7d404307b6cd6912ba43f570506f8ecde9f4208d0968ac81042a05f5d09a0cea568db596f5dc17268f3678a01ada55fcfe6c186a2aed5e069e0b3ec6ac5051265a3735344e1f12e86cce7f45842e2d28110e05140f96fe1d76b9341257c8ac53d07db3c950737f139c437ce4b03e3db24f1c9889fd633c65e981884d7182cf951033590e1dac1eca742b54cf9799cabb81fb75ef4f558e131382effdfea74e9884ed46d138e37d6ac7bbad16b29c292c632c7cbe33dd08282f568bfc11c5904e91756003dfbc7d3a745211641e09b23a3462a88482b6f394484fc16abc2bdde39589056e2455993de888402704a4b60dd3d6631985dc72a04f54cb585ab1db1b82f07379e9d9b79e98fe614943b5b9c5468a4ec1c5813303c9d07c550dc341d2605a12f98a5d2293063539ae932444fd153f24d0eb1f69e6cc50db6ba6827aec0de7c4fc4b40ab7a498c48bbe6dd4a0bfc1142c5f7cb5f2cbf2228782a0adbd57beb37640dcf0d3cbd5fb4404137b990428d23e748578b6832d8e21553a9ad5f3e2376c51a454336226ca3fee641b354ee33acc4e1059a561ca8a3c0682232e817e50c459bda0092412cbb133b4931fd56a08b005aecbc982e5c5d07027fa9bced0c4ae7ddba7136eb99eb3b8a80ed51d684c26c36e1b6d52b6c2aed0ac1764e1c9a5f353b2b3f3290acf8fe57d72d5c362356920e411cad6595effa48ffd99a9a18699b044fb727ee58b00e1f4994bd8992644da872727c807d991ce0051fbcd5ab9d07fe41f668ca9b68f0843a5921db476fa984b74251a536a2c6d000acc5534ae7a13339deb2f4d30d335133227011a47da4a509a00cc76a87a63223b6e70a2c02f73da4925415abee6e814fe0fa53769b21e3f8c8fa8be9152fadb0d35b43d628e0f1dce535dec0b6beec7570a56be906f4c9695e9a24e2342277c87ab4e70f7c909cb4199a87d24a1ebc47caf59eaccc636f3d7666b0fbc45bc6293e1cd01b671dae0d576571b39824384da427d100d5a0d6c6fd709fb3d964ba3a255f53991358d4a7ba54f9622c2f773715d7645b529658e25f538a1819603ebe7ece564c89c7cc0e63c72e7c2a294a52d9f9a4daecfc0e3a8cdf0ff8623a89f9d97fb35c02d3a82bf6227900bde81245df5a557154671db7fe285be6bc75485e10f831e8c7a36c10654419652793affd9da123bdf4f72a26bfe589bf0c40b6c9553b2ab430dfaa851db5bec04feaf1f02d0c80f5218b1e752dd5cca0c66c1f82a383489205ef4e948e24a84eec2b62f34e8e63afd31ccf74b158c2eb86389c594bd6560539b91f12586e7cbcd242d72ac3ce4d4c816cf7209cbf66c40f1de44e322cafbfd80c22a10e626260be0e8cdb1305d8da4c4b7e47c467107dbc08d0ebbd0ee4383213cbf18e95fc74b5b8f4092ed769df01c3a53d81b518bdafb546dcf63b3d8c605c73e7fd750d63686afaf1a01d8dcd65020bfed9953bc20c88f8153eebbe5f691956e5fc2827f18d6b4d9c52b2db16ae7521e397405abbf964effd94a9d4cab9f8eaf5146ee8b2d5c35f6930f4c077971659c0bdf77ceae91dc832f4a44d13f766b68aba7f17fc4e1f5efc7670444f1615095d5b73a6cb87e2b76d92b3b3d0a96a982bb42c1291f3b6b8bd7e63ba56ea9ee0ff4c390006e508e575e784f13b146fdc42aae36b067de19ea8e6a561a06b169c24fa5dcf773b22569ebfda84e354ea582a149209a70d9cbaa7d0567d0264c034cfa32b74d7125bf98cebb3812aaca321e5b78ab72247c042199a8636d36d62eb17d841d42e00809c3db2d9bb44249df9e0b7ef8a0b909f67258b302bdb0298c64c2350e3d8400db0c5fbe6a871d24e80fda7b1ae5437d7d644d47fe5b7c81324dcadf8519853c6c7ba45a807210a25c73eee279bfac5a1e97c16e16e4834e0efa8aaf276f4342784602027a28fe02f606f2eb856067c6bccea8e5a4c7ca5e80331bbafde1aa62e91bbf35f6aaa7afac98f69a81a5100ebc6bb593bb583329685121ed26160e57f1b7e03dc52b6a1a92fb2ea7f8f019a5ef562a47ce21e20efe6165a8870781da1a5df1f7d3c2ad14750533bfebf376eb500be8e6c2eb6fbcd047080f558603b0da3289af2f6cd4ba3b249dd8754ae27e36fb1ecf3576cf8823c4e113df02cec9461ff04a10cf45095799ce7f0736f109af38e525c9626cb59877bb0a78526975ab3f8e9e63c08fc1d84878ea3f90f82cf54ed253cbb852607ada4eeb8d46b17fbabe9bec13fef2e3ff3497487c7f6700ee5ded9f5ccd3685a9d2cdf1b6724c36bd1b385def27f3d1e3efe2f9adb52e90e2d9223c2d3d3f348c194a591f96c0a9b54a710acebeb3aa67cf4addc922fd6945cc57b7dfa4d099a325e4d084b0e89c3253e507a0ff2eb31106ed24e111ff212d317fdd4a0a6c52876c61f5dbba4e03ef9133f89441b9c74931d94929088c407432bb1f9df268ea41b2bd5b013c4055a01fedfc01182cfe24ffcec7e026e4e21389fe8aeb8b72efdfc620e2f6db3ad045071b54e2db8bfc38b29fedca25cb693e3dad93367466a6bf500e05c860dfab18425d9159bc6b3aff2ae8b764eb3833b2690d9b5b01dec8f36aec2c3d089491ebfe9199211d0984ff0e0d01232507c26cfa2ca247be1f33d52924454c86aaaf45bc9bf6df2a9813191ef1b9c0b03efd396ec7d74ca5f955baea0a81b8eed880837b8772bfeedaf9edd381df353a5f6a4eb0fb3fae4786f6483f3651c5a37267528efee8b41f5b186197632ebdc1b608020cef042906b9bb92661f659b8c6233b4b0c60d9aa9b4809bbd3ad9e041daaa89071938046329f498817b60e6907aa02ace024c79e576e11dd57402d30c2f193d372ec07f6bd3246165b7d9db4e5a176ccc825e0a8</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请输入密码后查看！</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>不死者</title>
+      <link href="/2017/08/15/%E4%B8%8D%E6%AD%BB%E8%80%85/"/>
+      <url>/2017/08/15/%E4%B8%8D%E6%AD%BB%E8%80%85/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，您输入的密码错误，请检查后重新输入。" data-whm="抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。">  <script id="hbeData" type="hbeData" data-hmacdigest="f5fb9a7c0f6545958c46ed509aa371f988807293b548f490091d29b5925af421">fb0f79042ea8a01b9bf0fc0b1ce93caec6def66f700c4ed5fb9ce112b5289e11e42fabfcad484b4dd6df82182f3f5bc7a9890a3d6df2d4ddb55aa332a2ece528eabb02bb5c6e376ec98a69486d2b373221643a06e2a553c3d1946bcab3625d5c714b8a4e3555034274f6115eadf9d40a02fac27a30b554b96ab28489e063b587abf27988a5a83708291c836b625d6724bf10b1aac7e19b9209dc559ac01fdd7e01bc0c80425376f90a1c582e958691cf611623d9ccf1a887fc08890540653c22afc926abe5468b45ff219bec88a8ca838c7dda6743e8c1eb4c6ebad906974593916653176f14b1ddd2134ecc56663b962cbb6e53464a9414a71b8efbe800204e85d49fe51a8124d5fb40f2e2f697e714701f76e705c3caccbac0983c64043057fa880e7c25c8ec24a673923f3756804c08592258fc297c17abb50e3bdbf242156fcbbcd183bb7823ccfcb5a8b27c9abaf7ac0d29446a03acccd30e0e702bf7fa17f912999d57c5a710036991eecabb478b620d184af35a1b473569fb06d358e4c7667c4acaba79ffc34f13bfdeedc15abafcaf41db6011100f1c18f21301632f955c01df956da93d2c4d0835f4b9b16c6b205b20577f41640c1ade1030d1b726b3359459290c0fc87b7bd9f521e4bcc1356dae6e3f7194b0f8904b8c4f16e5dba60802a2a5d42747a51d438a5c06956097c6dd4698db256d764c062e2b0e322af996d1cb9c006d4c57f13deb04384cf8917ec9091070908a0124e26c85aabfa7031c14cd20227ce934ac10b9aa8c6298c45a91c551e32f7029a08e2cf32981e811c021b5fedb85c9a0099b10eb2abe998ec4f4629df1a51558b915a4d3f69352089b7cafdae7a7a3a7b60482a97c28b5b444b8ef2cfc3f04b6f597b24d95bebf1818684556f01d9a29cde416535947ebdc8a705e8c63530dad90fb3572042c18ff34ce465030b8f840dd8af2276c3f4f4f2287e85c65b5898f1ac38d4741247fec0080bd84be94b74854d6068267c7ed993bd4977056a150fe99b3dbc73341c53d1d8ba3502f92bf4290bccfc40a9620668149e1c4a594c5796cda7aa205dd4cef2f98bbce5e7f8b79d185db420b808c4fc1645ae8ea958a21a6b34ee54f234572243dda59af52076f74f3e530d1cbc413611ecaf5a56c79f288a92a125fed977155bc6c62aeb14d4408d1a0e3c85306a1aa96bd5365ed02cfb1e384900bbfe473b094257b0122bd156eda70d29b87d27d240862d89314896caa8e210eca7b0d717cf7cafe43a9f5b5f5b9f3348f3a794506fb3e795a43b4e0177e559e461de11cd813b8a70a7c53c91c19a48fdfad7a45ff4efe06bc384519ba553c98e6f6b6c25a54bb02197a59b8650e9c130a5fff596b87a18a4529849741df7e9536d3c5c862b53a1398e04ad82225acb345266f13fd869ae49ee99a82f91e87d6853d95c52f55077922cd89b486b2645b929e6c6148307a6e265db6535b61a06674fe61fbc15e10f05a3c42fdedd3b56afa808b9fe7b155399c6f2105ba2c224e1aef379e30ef29f29f707b1e14f9fedec414962b93003416e9f9b0111b2f285dd387ef86f1bfc62e5aec16c0c6a6d9bc7dbe47792dab3f536d52b313038650fa64d64faa7f94bb078e8d870cd8f43cba349c19fce5f18f17a27c7bb56ee69a3bb88ecc9a2dfa273ab12328414c9fe9bf485277cc3b1c4d5e6f40c00e4d8869545cc11a8c3454cc1c63668b36dafe6ad9d325ae77bc125c4bd315709aaed9d718b9e769a6226394df43f2f57751e4b9e8e6b45a567995941ffd7a7c72893dab9dd873c4631ee97541eedc933f9284918c557d0dac2de9631f1aa851c7916405411e82eb894f2b6c162a3fff5d60a8d4d7723e3031a8cbe47c504552aab7417ff5a629b081a38b27bc7a5c4dcee6412023d3d6cffb1ab27b264405af088380736e64cf7c</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">当前文章暂不对外可见，请输入密码后查看！</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 随笔 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>

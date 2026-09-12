@@ -1,0 +1,14 @@
+/* Native controls, using the existing study palette and dimensions. */
+#nav #blog-info { min-width: 0; }
+#nav .nav-page-title { max-width: 100%; vertical-align: middle; }
+#nav .nav-page-title > .site-name:first-child { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#nav .nav-page-title:hover > .site-name:first-child { opacity: 1; transform: none; }
+#nav .nav-page-title > .site-name:last-child { display: none; }
+#local-search #loading-status[hidden] { display: none; }
+#local-search .search-result-list { margin: 0; padding: 0; list-style: none; }
+#local-search-pagination .ais-Pagination-list { display: flex; justify-content: center; align-items: center; gap: 12px; padding: 12px 0; margin: 0; list-style: none; }
+#local-search-pagination .ais-Pagination-link { color: var(--text-muted); font-size: 13px; background: transparent; }
+#local-search-pagination a:hover, #local-search-pagination .ais-Pagination-item--selected .ais-Pagination-link { color: var(--accent-hover); }
+#local-search-pagination .ais-Pagination-link--disabled { opacity: .45; }
+#giscus-wrap { width: 100%; min-width: 0; }
+#giscus-wrap iframe { width: 100%; max-width: 100%; border: 0; }
